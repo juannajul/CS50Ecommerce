@@ -1,0 +1,53 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}Watchlist{% endblock %}
+
+{% block body %}
+
+<h2>Your Watchlist</h2>
+
+{% for i in a %}
+<hr />
+<div class="container-sm">
+    <div class="row">
+
+        <div class="col-sm-3">
+            <a href="{% url 'listing' listing_id=i.id  %}">
+                <img src="{{i.image_url}}" alt="" class="img-watchlist">
+            </a>
+        </div>
+
+        <div id="line"></div>
+
+        <div class="col-md" id="listing">
+            <a href="{% url 'listing' listing_id=i.id  %}">
+                <h4 id="listing-title-index">{{i.title}}</h4>
+            </a>
+            <hr />
+            <h6>{{i.description}}</h6>
+            <strong>
+                <p>
+                <h5>${{i.auction_bided.last.bid}}</h5>
+                </p>
+            </strong>
+            <p>Created on {{i.created_at}}</p>
+            <button type="button" class="btn btn-success">
+                <a href="{% url 'listing' listing_id=i.id %}">
+                    View this Item
+                </a>
+            </button>
+        </div>
+
+    </div>
+</div>
+<hr/>
+{% empty %}
+    <hr/>
+    <h5>Your Watchlist is Empty</h5>
+{% endfor %}
+<div class="sub-total">
+    <h3>Subtotal in your Watchlist: </h3>
+    <h5>${{total}} ({{counter}})Items</h5>
+</div>
+
+{% endblock %}

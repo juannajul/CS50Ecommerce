@@ -1,0 +1,124 @@
+body {
+    padding: 10px;
+}
+
+.create-form-general{
+    margin-left: 120px;
+}
+
+#create-title{
+    text-align: left;
+    margin-left: 165px;
+    margin-bottom: 30px;
+}
+
+#title-form{
+    width: 200px;
+}
+
+#description-form{
+    width: 500px;
+}
+
+#img-form{
+    width: 300px;
+}
+
+.create-message > h3 {
+    margin-left: 50px;
+}
+
+.img-listing{
+    max-width: 500px;
+    max-height: 300px;
+    border: 0px solid black;
+    box-shadow: -2px 3px 4px 0px gray;
+}
+
+.img-listing:hover{
+    box-shadow: -2px 3px 4px 1px gray, -2px 3px 4px 1px grey;
+}
+
+#listing-title-index:hover{
+    text-shadow: 0px 2px 1px #ccc, 0px 0px 2px #ccc;
+}
+
+#line{
+    border-right: 2px solid rgba(0,0,0,.1);
+    height: auto;
+}
+
+#listing > a{
+    text-decoration: none;
+    color: black;
+}
+
+button > a{
+    text-decoration: none;
+    color:white;
+}
+
+button > a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.img-post{
+    max-width: 550px;
+    max-height: 400px;
+    border: 0px solid black;
+    box-shadow: -2px 3px 4px 0px gray;
+}
+
+#description-item{
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+#bid-button{
+    height: auto;
+    margin-left: 5px;
+}
+
+#badge{
+    margin-top:6px;
+}
+
+.img-watchlist{
+    max-width: 250px;
+    max-height: 150px;
+    border: 0px solid black;
+    box-shadow: -2px 3px 4px 0px gray;
+}
+.img-watchlist:hover{
+    box-shadow: -2px 3px 4px 1px gray, -2px 3px 4px 1px grey;
+}
+
+.sub-total{
+    text-align: right;
+    margin-right: 50px;
+}
+
+#comments{
+    border: 2px solid rgb(149, 145, 163);
+    box-shadow: -2px 3px 4px 1px grey;
+    padding: 15px;
+    margin-bottom: 35px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+
+#comment-line{
+    font-size: 25px;
+    color: gray;
+}
+
+#comment-date{
+    font-size: 13px;
+    text-align: left;
+}
+
+#watchlist-number{
+    color: white;
+}

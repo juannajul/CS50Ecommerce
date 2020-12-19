@@ -1,0 +1,49 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}Create Auctions{% endblock %}
+
+{% block body %}
+
+<h2 id="create-title">Create Your Listing</h2>
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success create-message" role="alert">
+            <h5>{{message}}</h5>
+        </div>
+    {% endfor %}
+{% endif %}
+<form action="{% url 'create_listing' %}" method="post">
+    {% csrf_token %}
+    <div class="create-form-general">
+        
+        <div class="form-group " id="title-form">
+            {{ createForm.title }}
+        </div>
+
+        <div class="form-group " id="description-form">
+            {{ createForm.description }}
+        </div>
+
+        <div class="form-group">
+            {{ createForm.bid_initial.label }}
+            $ {{ createForm.bid_initial }}
+
+        </div>
+
+        <div class="form-group" id="img-form">
+            {{createForm.image_url}}
+        </div>
+
+        <div class="form-group">
+            {{options}}
+            {{createForm.category}}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>  
+
+</form>
+
+{% endblock %}

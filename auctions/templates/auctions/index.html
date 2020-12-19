@@ -1,0 +1,45 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    {% for auction in auctionListing %}
+    
+        {% if auction.active == True %}
+    <hr/>  
+        <div class="container-xl">
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'listing' listing_id=auction.id %}">
+                        <img src="{{auction.image_url}}" alt="listing image" class="img-listing">
+                    </a>   
+                </div>
+
+                <div id="line"></div>
+                
+                <div class="col" id="listing">
+                    <a href="{% url 'listing' listing_id=auction.id  %}">
+                        <h3 id="listing-title-index">{{auction.title}}</h3>
+                    </a>
+                    <hr/>
+                    <h5>{{auction.description}}</h5>
+                    {% if auction.auction_bided.last.bid == None %}
+                    <strong><p><h4>${{auction.bid_initial}}</h4></p></strong>
+                    {% else %}
+                    <strong><p><h4>${{auction.auction_bided.last.bid}}</h4></p></strong>
+                    {% endif %}
+                    <p>Created on {{auction.created_at}}</p>
+                    <button type="button" class="btn btn-success">
+                        <a href="{% url 'listing' listing_id=auction.id %}">
+                            View this Item
+                        </a>
+                    </button>
+                </div>
+            </div>
+    <hr/>        
+        {% endif %}     
+        </div> 
+    
+    {% endfor %}
+
+{% endblock %}
