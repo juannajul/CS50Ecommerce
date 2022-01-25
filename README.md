@@ -1,5 +1,5 @@
 # CS50Ecommerce
-E-commerce project
+## E-commerce project:
 On this project the users can create an account where they can create auctions of diferent products.
 All users can make bids for each product in the app. 
 * The owner of the product can close the auction and.
